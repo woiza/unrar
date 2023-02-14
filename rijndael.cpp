@@ -3,12 +3,14 @@
  **************************************************************************/
 #include "rar.hpp"
 
-//#ifdef USE_SSE
-//#include <wmmintrin.h>
-//#endif
+#ifdef USE_SSE
+#include <wmmintrin.h>
+#endif
+
+#ifdef USE_NEON
 #include "sse2neon.h"
 #include <sys/auxv.h>
-
+#endif
 
 static byte S[256]=
 {
